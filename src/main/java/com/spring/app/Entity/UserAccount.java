@@ -26,7 +26,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-class UserAccount {
+public class UserAccount {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)

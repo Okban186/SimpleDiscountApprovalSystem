@@ -28,7 +28,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-class DiscountRequest {
+public class DiscountRequest {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   String drId;

@@ -21,7 +21,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
-class Counter {
+public class Counter {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   String counterId;

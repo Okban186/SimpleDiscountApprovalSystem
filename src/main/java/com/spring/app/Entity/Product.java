@@ -25,7 +25,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
-class Product {
+public class Product {
 
   @Id
 

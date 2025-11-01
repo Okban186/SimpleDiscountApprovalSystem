@@ -24,7 +24,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-class OrderItem {
+public class OrderItem {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)

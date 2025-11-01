@@ -21,7 +21,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
-class Permission {
+public class Permission {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   String permissionId;

@@ -30,7 +30,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "shop_order")
-class Order {
+public class Order {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)

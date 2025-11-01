@@ -24,7 +24,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
-class Role {
+public class Role {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
