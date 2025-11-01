@@ -30,7 +30,7 @@ class Product {
   @Id
 
   @GeneratedValue(strategy = GenerationType.UUID)
-  String productID;
+  String productId;
 
   @Column(columnDefinition = "VARCHAR(100) unique")
   @Size(min = 10)

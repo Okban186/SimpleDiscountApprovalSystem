@@ -4,6 +4,7 @@ import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.AccessLevel;
@@ -22,8 +23,8 @@ import lombok.experimental.FieldDefaults;
 
 class Counter {
   @Id
-  @GeneratedValue
-  String counterID;
+  @GeneratedValue(strategy = GenerationType.UUID)
+  String counterId;
 
   String name;
 

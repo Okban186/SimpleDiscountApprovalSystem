@@ -28,7 +28,9 @@ class Role {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
-  String roleID;
+  String roleId;
+
+  String name;
 
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "RolePermission", joinColumns = @JoinColumn(name = "roleID"), inverseJoinColumns = @JoinColumn(name = "permissionID"))

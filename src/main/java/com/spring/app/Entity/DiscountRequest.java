@@ -12,6 +12,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.AccessLevel;
@@ -29,8 +30,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 class DiscountRequest {
   @Id
-  @GeneratedValue
-  String drID;
+  @GeneratedValue(strategy = GenerationType.UUID)
+  String drId;
 
   @Column(precision = 19, scale = 4)
   BigDecimal requestedDiscount;

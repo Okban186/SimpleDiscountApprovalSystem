@@ -30,18 +30,18 @@ class UserAccount {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
-  String userID;
+  String userId;
 
   String userName;
   String name;
   String passWord;
 
   @ManyToMany(fetch = FetchType.LAZY)
-  @JoinTable(name = "UserRole", joinColumns = @JoinColumn(name = "userID"), inverseJoinColumns = @JoinColumn(name = "roleID"))
+  @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
   Set<Role> roles;
 
   @ManyToMany(fetch = FetchType.LAZY)
-  @JoinTable(name = "UserPermission", joinColumns = @JoinColumn(name = "userID"), inverseJoinColumns = @JoinColumn(name = "permissionID"))
+  @JoinTable(name = "user_permission", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "permission_id"))
   Set<Permission> extraPermission;
 
   @ManyToOne

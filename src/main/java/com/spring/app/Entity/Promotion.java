@@ -8,6 +8,7 @@ import ch.qos.logback.core.joran.spi.NoAutoStart;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinColumns;
@@ -31,14 +32,14 @@ import lombok.experimental.FieldDefaults;
 class Promotion {
 
   @Id
-  @GeneratedValue
-  String promotionID;
+  @GeneratedValue(strategy = GenerationType.UUID)
+  String promotionId;
 
-  @Column(columnDefinition = "NVARCHAR(300)")
+  @Column(columnDefinition = "VARCHAR(300)")
   @Size(max = 300, message = "String exceeds allowable length")
   String name;
 
-  @Column(columnDefinition = "NVARCHAR(MAX)")
+  @Column(columnDefinition = "LONGTEXT")
   String promotionPolicy;
 
   BigDecimal discountPercentage;

@@ -31,6 +31,6 @@ class Customer {
   String phone;
 
   @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
-  Set<OrderItem> orderItems;
+  Set<Order> orders;
 
 }

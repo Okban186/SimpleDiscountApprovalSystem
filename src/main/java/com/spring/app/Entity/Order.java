@@ -15,6 +15,7 @@ import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,11 +29,12 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "shop_order")
 class Order {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
-  String orderID;
+  String orderId;
 
   @CreatedDate
   LocalDateTime createdAt;
