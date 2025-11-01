@@ -1,0 +1,55 @@
+package com.spring.app.Entity;
+
+import java.util.Set;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumns;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
+
+@Entity
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
+class UserAccount {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  String userID;
+
+  String userName;
+  String name;
+  String passWord;
+
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(name = "UserRole", joinColumns = @JoinColumn(name = "userID"), inverseJoinColumns = @JoinColumn(name = "roleID"))
+  Set<Role> roles;
+
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(name = "UserPermission", joinColumns = @JoinColumn(name = "userID"), inverseJoinColumns = @JoinColumn(name = "permissionID"))
+  Set<Permission> extraPermission;
+
+  @ManyToOne
+  Counter counter;
+
+  @OneToMany(mappedBy = "staff", fetch = FetchType.LAZY)
+  Set<Order> orders;
+
+  @OneToMany(mappedBy = "requestedBy", fetch = FetchType.LAZY)
+  Set<DiscountRequest> discountRequests;
+}
